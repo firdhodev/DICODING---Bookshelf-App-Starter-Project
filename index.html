@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf Apps</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <h1>Bookshelf Apps</h1>
+
+    <!-- Form untuk menambahkan buku baru -->
+    <div class="container">
+        <h2>Masukkan Buku Baru</h2>
+        <form id="bookForm" data-testid="bookForm">
+            <div class="form-group">
+                <label for="title">Judul</label>
+                <input type="text" id="title" data-testid="bookFormTitleInput" required>
+            </div>
+            <div class="form-group">
+                <label for="author">Penulis</label>
+                <input type="text" id="author" data-testid="bookFormAuthorInput" required>
+            </div>
+            <div class="form-group">
+                <label for="year">Tahun</label>
+                <input type="number" id="year" data-testid="bookFormYearInput" required>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="isComplete" data-testid="bookFormIsCompleteCheckbox">
+                    Selesai dibaca
+                </label>
+            </div>
+            <div class="form-group">
+                <button type="submit" data-testid="bookFormSubmitButton">Masukkan Buku ke rak <strong>Belum selesai dibaca</strong></button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Form untuk mencari buku -->
+    <div class="container">
+        <h2>Cari Buku (Opsional)</h2>
+        <form id="searchBookForm" data-testid="searchBookForm">
+            <div class="search-group">
+                <input type="text" id="searchBookTitle" data-testid="searchBookFormTitleInput" placeholder="Judul">
+                <button type="submit" data-testid="searchBookFormSubmitButton">Cari</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Daftar buku belum selesai dibaca -->
+    <div class="section">
+        <h2>Belum selesai dibaca</h2>
+        <div id="incompleteBookshelf" data-testid="incompleteBookList"></div>
+    </div>
+
+    <!-- Daftar buku selesai dibaca -->
+    <div class="section">
+        <h2>Selesai dibaca</h2>
+        <div id="completeBookshelf" data-testid="completeBookList"></div>
+    </div>
+</body>
+</html>
